@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <base href="/my-wiki/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیست محتوای IR0Day.Today | @LearnExploit | </title>
@@ -249,7 +248,9 @@
                     const icon = isDir ? 'fa-folder' : 'fa-file';
                     const size = isDir ? '-' : formatSize(item.size);
                     const date = formatDate(item.git_last_modified || item.created_at || item.updated_at);
-                    const url = isDir ? `./${item.name}/` : `https://ir0daytoday.github.io/my-wiki/${item.path}`;
+                    
+                    // اصلاح مهم: استفاده از مسیرهای نسبی
+                    const url = isDir ? `./${item.name}/` : `./${item.name}`;
                     
                     html += `
                         <a href="${url}" class="list-item">
